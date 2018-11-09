@@ -234,3 +234,163 @@ class BMWCarId extends CarId{
 `注意：特质中也可以有具体实现，不一定都是抽象方法`
 
 ## 模式匹配
+就是switch-case语句
+```
+val colorStr=colorNum match{
+    case 1=>"red"
+
+    case 2=>"green"
+
+    case 3=>"yellow"
+
+    case -=>"Not Allowed"
+    //模式匹配的case语句中，可以使用变量，代表未捕获的变量：
+    case unexpected =>unexpected + "is Not Allowed"
+}
+println(colorStr)
+
+
+
+```
+
+### case类
+这是一种特殊的类，他们经过优化被用于模式匹配
+```
+    case class Car(brand:String,price:Int)
+    val myBYDCar = new Car("BYD",89000)
+    val myBMWCar  =new Car("BMW",120000)
+
+    for(car <-List(myBYDCar,myBmwCar)){
+        car match{
+            case Car("BYD",89000)=>print("Hello BYD")
+            case Car("BMW“，120000)=>println("Hello BMW")
+        }
+    }
+```
+
+### Option类型
+标准类库中的Option类型用case类来表示那种可能存在、也可能不存在的值，当我们能够预计到变量或者函数有可能返回NULL时，建议使用Option类型。   
+Option包含一个子类Some，当存在可以被引用的值得时候，就可以使用Some来包含这个值
+
+```
+val books = Map("Hadoop"->5,"spark"->10)
+//这里返回Option的some(5)
+books.get("Hadoop")
+//这里将返回None，它将是一个Option对象
+books.get("hive")
+```
+
+Option类型提供了一个getOrElse方法，这个方法在Option是Some实例时返回对应的值，而在None时返回传入的参数
+```
+val sales = books.get(hive)
+//这也算是一种异常处理
+sales.getOrElse("No Such Book")
+```
+Option[T]实际上就是一个容器，可以看做一个集合，只不过这个集合要么只包含一个元素（包装在Some中），要么不存在（None）
+对于集合，我们可以使用map，foreach，filter方法：   
+```
+//这行代码不会输出任何内容，因为books.hive本身没有内容，所以打印不出值
+books.get("hive").foreach(println)
+```
+
+# Spark函数式编程
+
+## 函数定义和高阶函数
+### 函数字面量
+字面量包括整型字面量、浮点数字面量、布尔型、字符、字符串、符号、函数和元组字面量，函数字面量可以提现函数式编程的核心理念   
+在函数式编程中，函数是“头等公民”，可以像任何其他数据类型一样被传递和操作，也就是说，**函数的使用方式和其他数据类型的使用方式完全一致了。**   
+我们可以像定义变量一样去定义一个函数，函数就会像其他变量一样，开始有“值”——函数的值，就是函数字面量
+```
+//定义函数
+def countere(value:Int):Int={
+    value+=1
+}
+//这个函数的类型如下（只有一个参数，括号可以省略）：
+(Int)=>Int
+//这个函数的值是：
+只要把函数定义中的类型声明部分去除，剩下的就是“函数值”
+(value:Int)=>{value+1}
+
+```
+这样的方式使得我们能够在某个需要声明函数的地方声明一个函数类型，在调用的时候传一个对应的函数字面量即可，和使用普通变量一模一样
+
+## 匿名函数和闭包
+匿名函数实际上就是Lambda表达式：（参数）=>表达式 的形式（如果参数只有一个，括号可以省略），例如`(num:Int)=>num*2`
+```
+val myNumFunc:Int=>Int=(num:Int)=>num*2//把匿名函数定义为一个值，赋值给myNumFunc变量
+println(myNumFunc(3))//打印6
+
+```
+上面的Int=>Int是可以省略的，因为Scala可以推断出这个函数变量的值是Int，所以不需要显示声明了。
+
+### 闭包
+闭包是一种特殊的函数，它是指定义函数时，还含有未定义的自由变量，闭包反映了一个从开放到封闭的过程。
+```
+//普通函数
+val addMore = (x:Int)=>x>0
+//闭包
+val addMore = (x:Int)=>x+more
+```
+注意：每次addMore函数调用时都会创建一个新的闭包，每个闭包都会访问闭包创建时活跃的more变量。（也就是每次调用的时候会使用最新的外部变量值）
+
+### 占位符语法
+为了让函数字面量更加简洁，我们可以使用下划线作为一个或者多个参数的占位符，只要每个参数在函数字面量内仅出现一次
+```
+val numList=List(-3,-5,1,6,9)
+//这里把函数值传进去了，函数式编程
+numList.filter(x=>x>0)
+//占位符语法，相当于上面这句
+numList.filter(_>0)
+```
+
+## 针对集合的操作
+列表的遍历
+```
+//for循环遍历
+val list=List(1,2,3)
+for(elem<-list)
+println(elem)
+//foreach遍历
+val list=List(1,2,3,4,5)
+list.foreach(elem=>println(elem))
+```
+映射的遍历
+```
+//普通映射遍历
+for((k,v)-<map)
+println(k)
+//方法2：
+university.foreach({case(k,v)=>println(k+":"+v)})
+//方法3：
+university foreach {kv=>println(kv._1+":"+kv._2)}
+```
+针对集合的操作：
+```
+//map操作是针对集合的典型变换操作，它将某个函数应用到集合中的每个元素并产生一个结果集合
+val books = List("hadoop","spark")
+books.map(s=>s.tuUpperCase)
+
+//flatMap操作是Map的一种扩展，在flatMap中，我们会传入一个函数，这个函数对每个输入都会返回一个集合（而不是一个元素），
+//然后，flatMap按照自己的处理方式把这多个集合“拍扁”成一个集合。
+books flatMap (s=>s.toList)
+//得到的结果是：
+List[Char] = List(H,a,d,o,o,p,S,p,a,r,k)
+
+//filter操作：遍历一个集合，并从中获取满足指定条件的元素组成一个新的集合
+val university = Map("XMU"=>"Xiamen uNIVERSITY","thu"=>"Tsinghua")
+val universityOfXiamen = university filter {kv=>kv._2 contains "Xiamen"}
+
+//reduce归约操作
+val list = List(1,2,3,4,5)
+//该函数执行时，从左向右 1+2=3  3+3=6 6+4=10 10+5=15
+list.reduceLeft(_ + _)
+list.reduceRight(_ + _)
+
+//fold操作：折叠操作和reduce比较类似，但是需要一个种子值，以该值作为上下文，处理集合中的元素
+val list = List(1,2,3,4,5)
+//该操作等价于 10*1=10 10*2=20 20*3=60 ……
+list.fold(10)(_*_)
+```
+
+
+
