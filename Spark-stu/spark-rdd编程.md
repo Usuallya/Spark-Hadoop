@@ -169,3 +169,38 @@ val accum = sc.longAccumulator("my accumulator")//累加器名字
 sc.parallelize(Array(1,2,3,4)).foreach(x=>accum.add(x))
 print(accum.value)
 ```
+
+## 文件系统数据读写
+### 本地文件系统的数据读写
+#### 文件读取代码：   
+`val textFile = sc.textFile("file:///usr/local/……")`，注意，由于惰性机制，这代码写完仍然不会加载，除非使用行动操作，才开始加载。正因为这样，很多时候加载文件的很多异常只有等到行动操作时才会报告。   
+#### 文件回写代码：   
+`textFile.saveAsTextFile("file:///usr/local/writeback.txt")`   
+注意，这里其实并不会生成writeback.txt文件，而是生成writeback.txt目录，然后在里面生成part-0000和_success文件，这个part-0000就是第一个分区的文件，如果又想加载这里的文件，只需要`textFile = sc.textFile()`写到目录即可。它会加载其下所有分区文件。   
+#### HDFS的数据读写
+```
+//端口号是自己配置的，user/hadoop是用户目录，等价于"word.txt"
+val textFile = sc.textFile("hdfs://localhost:9000/user/hadoop/word.txt")
+//行动操作，马上执行加载文件
+textFile.first()
+
+//回写
+val textFile = sc.textFile("word.txt")
+//回写，这里生成的也是一个目录
+textFile.saveAsTextFile("writeback.txt")
+
+```
+
+#### JSON文件的数据读写
+Spark提供了一个JSON样例数据文件，放在examples/src/main/resources/people.json，我们以读写这个文件为例：
+```
+val jsonStr=sc.textFile("..../people.json")
+//println会打印json字符串对
+jsonStr.foreach(println)
+
+//json的解析
+//scala中有一个自带的json库，//util.parsing.json.JSON，可以实现解析
+JSON.parseFull(jsonString:String)
+//解析成功会返回一个Some(map:Map[String,Any])，失//败则返回none
+
+```
