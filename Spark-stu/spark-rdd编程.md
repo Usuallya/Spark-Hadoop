@@ -201,6 +201,42 @@ jsonStr.foreach(println)
 //json的解析
 //scala中有一个自带的json库，//util.parsing.json.JSON，可以实现解析
 JSON.parseFull(jsonString:String)
-//解析成功会返回一个Some(map:Map[String,Any])，失//败则返回none
+//解析成功会返回一个Some(map:Map[String,Any])，失败则返回none
+```
 
+## 读写HBase中的数据
+HBase是BigTable的开源实现。
+HBase中时间戳的概念是因为HDFS的不可修改特性，每次HBase的修改只能是生成一个新值，然后将结果连接到新值上，旧的值并不删除，而是以时间戳的形式提供访问。   
+
+首先将HBase的jar文件拷到spark中的jars文件夹下，然后可以在shell中使用Hbase。在编程时则可以直接用编译器引入这些jar包。   
+要让spark读取HBase，需要使用SparkContext提供的newAPIHadoopRDD这个API，将表的内容加载成RDD。
+随后，可以对rdd使用count来统计读取到的行数量。使用foreach对RDD进行遍历读取：
+```
+val hBaseConf = HBaseConfiguration.create()
+val sc = new SparkContext(new SparkConf())
+hBaseConf.set()
+sc.newAPIHadoopRDD(hBaseConf)
+
+stuRDD.foreach({case(_,result)=>
+val key = Bytes.toString(result.getRow)
+//查询参数的传递，以及数据额返回都是Bytes格式的
+val name = Bytes.toString(result.getValue("info".getBytes,"name".getBytes))
+val gender = Bytes.toString(result.getValue("info".getBytes,"gender".getBytes))
+})
+
+
+//写入HBase
+sc.hadoopConfiguration.set()
+val job = new Job(sc.hadoopConfiguration)
+job.setOutputKeyClass(classOf)
+job.setOutputValueClass()
+job.setOutputFormatClass()
+
+//构建记录
+val indataRDD=sc.makeRDD(Array("3,Rongcheng,M,26","4,Guanhua,M,27"))
+val rdd = indataRDD.map(_.split(',')).map{arr=>{
+    val put = new Put(Bytes.toBytes(arr(0)))
+    //写入info:name列的值
+    put.add(Bytes.toBytes("info"),Bytes.toBytes("name"),Bytes.toBytes(arr(1)))
+}}
 ```
