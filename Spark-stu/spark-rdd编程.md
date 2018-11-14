@@ -234,9 +234,14 @@ job.setOutputFormatClass()
 
 //构建记录
 val indataRDD=sc.makeRDD(Array("3,Rongcheng,M,26","4,Guanhua,M,27"))
-val rdd = indataRDD.map(_.split(',')).map{arr=>{
+val rdd = indataRDD.map(_.split(',')).map{arr=>{ 
+    //这里首先指定行键
     val put = new Put(Bytes.toBytes(arr(0)))
     //写入info:name列的值
     put.add(Bytes.toBytes("info"),Bytes.toBytes("name"),Bytes.toBytes(arr(1)))
+    put.add(Bytes.toBytes())
+    //这两个参数，第一个是系统所需的写入对象，第二个是刚才构建的put对象
+    (new ImmutableBytestWritable,put)
 }}
+rdd.saveAsNewAPIHadoopDataset(job.getConfiguration())
 ```
