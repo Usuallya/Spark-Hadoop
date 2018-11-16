@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcbde89a-7af4-4896-a4e7-eda4187f2601" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/hydra.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_4_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/file1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/file2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/readHBase.scala" afterDir="false" />
-    </list>
+    <list default="true" id="fcbde89a-7af4-4896-a4e7-eda4187f2601" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -29,6 +21,7 @@
     <session id="646911346">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.opened" value="2" />
@@ -69,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/readHBase.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="90">
+              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -123,9 +116,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="136" />
-    <option name="y" value="70" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="33" />
+    <option name="y" value="77" />
     <option name="width" value="1287" />
     <option name="height" value="704" />
   </component>
@@ -176,7 +169,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542250385773" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542271395435" />
     <property name="last_opened_file_path" value="/usr/local/spark/jars" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -261,16 +254,15 @@
       <option name="presentableId" value="Default" />
       <updated>1542164486499</updated>
       <workItem from="1542164489792" duration="569000" />
-      <workItem from="1542248315789" duration="2457000" />
+      <workItem from="1542248315789" duration="3670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3026000" />
+    <option name="totallyTimeSpent" value="4239000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="136" y="70" width="1287" height="704" extended-state="1" />
-    <editor active="true" />
+    <frame x="33" y="77" width="1287" height="704" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25381526" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -283,7 +275,7 @@
       <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298791" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3298791" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -337,8 +329,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/readHBase.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="90">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>
