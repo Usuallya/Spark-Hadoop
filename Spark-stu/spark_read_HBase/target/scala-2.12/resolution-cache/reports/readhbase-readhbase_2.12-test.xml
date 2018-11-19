@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181115102420"/>
+		date="20181119144231"/>
 	<dependencies>
 		<module organisation="org.scala-lang" name="scala-library">
 			<revision name="2.12.4" status="release" pubdate="20171011150456" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.4/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
@@ -22,7 +22,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.spark" name="spark-core_2.12">
-			<revision name="2.3.2" error="not found" downloaded="false" searched="false" conf="default(compile)" position="-1">
+			<revision name="2.3.2" error="public: unable to get resource for org/apache/spark#spark-core_2.12;2.3.2: res=https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom: java.net.SocketTimeoutException: connect timed out" downloaded="false" searched="false" conf="default(compile)" position="-1">
 				<caller organisation="readhbase" name="readhbase_2.12" conf="test, compile, runtime" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="0.1"/>
 				<artifacts>
 				</artifacts>

@@ -23,21 +23,290 @@
 [debug] 		tried /home/hadoop/.ivy2/local/org.apache.spark/spark-core_2.12/2.3.2/ivys/ivy.xml
 [debug] 	local: no ivy file found for org.apache.spark#spark-core_2.12;2.3.2
 [debug] 		tried https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom
-[debug] 	public: no ivy file found for org.apache.spark#spark-core_2.12;2.3.2
+[debug] problem occurred while resolving dependency: org.apache.spark#spark-core_2.12;2.3.2 {compile=[default(compile)]} with public: java.lang.RuntimeException: public: unable to get resource for org/apache/spark#spark-core_2.12;2.3.2: res=https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom: java.net.SocketTimeoutException: connect timed out
+[debug] 	at org.apache.ivy.plugins.resolver.RepositoryResolver.findResourceUsingPattern(RepositoryResolver.java:135)
+[debug] 	at org.apache.ivy.plugins.resolver.AbstractPatternsBasedResolver.findResourceUsingPatterns(AbstractPatternsBasedResolver.java:96)
+[debug] 	at org.apache.ivy.plugins.resolver.IBiblioResolver.findIvyFileRef(IBiblioResolver.java:102)
+[debug] 	at org.apache.ivy.plugins.resolver.BasicResolver.getDependency(BasicResolver.java:228)
+[debug] 	at org.apache.ivy.plugins.resolver.IBiblioResolver.getDependency(IBiblioResolver.java:538)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$$anonfun$defaultConvert$lzycompute$1$PluginCapableResolver$1.sbt$internal$librarymanagement$ConvertResolver$DescriptorRequired$$super$getDependency(ConvertResolver.scala:164)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$DescriptorRequired.getDependency(ConvertResolver.scala:291)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$DescriptorRequired.getDependency$(ConvertResolver.scala:288)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$$anonfun$defaultConvert$lzycompute$1$PluginCapableResolver$1.getDependency(ConvertResolver.scala:164)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.performResolution$1(SbtChainResolver.scala:152)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getResults$3(SbtChainResolver.scala:172)
+[debug] 	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:234)
+[debug] 	at scala.collection.Iterator.foreach(Iterator.scala:929)
+[debug] 	at scala.collection.Iterator.foreach$(Iterator.scala:929)
+[debug] 	at scala.collection.AbstractIterator.foreach(Iterator.scala:1417)
+[debug] 	at scala.collection.IterableLike.foreach(IterableLike.scala:71)
+[debug] 	at scala.collection.IterableLike.foreach$(IterableLike.scala:70)
+[debug] 	at scala.collection.AbstractIterable.foreach(Iterable.scala:54)
+[debug] 	at scala.collection.TraversableLike.map(TraversableLike.scala:234)
+[debug] 	at scala.collection.TraversableLike.map$(TraversableLike.scala:227)
+[debug] 	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getResults(SbtChainResolver.scala:165)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$lzycompute$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getDependency$1(SbtChainResolver.scala:323)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$resolveByAllMeans$2(SbtChainResolver.scala:249)
+[debug] 	at scala.Option.orElse(Option.scala:289)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.resolveByAllMeans(SbtChainResolver.scala:247)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getDependency(SbtChainResolver.scala:324)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver.getDependency(SbtChainResolver.scala:90)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.performResolution$1(SbtChainResolver.scala:152)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getResults$3(SbtChainResolver.scala:172)
+[debug] 	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:234)
+[debug] 	at scala.collection.Iterator.foreach(Iterator.scala:929)
+[debug] 	at scala.collection.Iterator.foreach$(Iterator.scala:929)
+[debug] 	at scala.collection.AbstractIterator.foreach(Iterator.scala:1417)
+[debug] 	at scala.collection.IterableLike.foreach(IterableLike.scala:71)
+[debug] 	at scala.collection.IterableLike.foreach$(IterableLike.scala:70)
+[debug] 	at scala.collection.AbstractIterable.foreach(Iterable.scala:54)
+[debug] 	at scala.collection.TraversableLike.map(TraversableLike.scala:234)
+[debug] 	at scala.collection.TraversableLike.map$(TraversableLike.scala:227)
+[debug] 	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getResults(SbtChainResolver.scala:165)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$lzycompute$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getDependency$1(SbtChainResolver.scala:323)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$resolveByAllMeans$2(SbtChainResolver.scala:249)
+[debug] 	at scala.Option.orElse(Option.scala:289)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.resolveByAllMeans(SbtChainResolver.scala:247)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getDependency(SbtChainResolver.scala:324)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver.getDependency(SbtChainResolver.scala:90)
+[debug] 	at org.apache.ivy.core.resolve.IvyNode.loadData(IvyNode.java:169)
+[debug] 	at org.apache.ivy.core.resolve.VisitNode.loadData(VisitNode.java:292)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.fetchDependencies(ResolveEngine.java:714)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.doFetchDependencies(ResolveEngine.java:799)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.fetchDependencies(ResolveEngine.java:722)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.getDependencies(ResolveEngine.java:594)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.resolve(ResolveEngine.java:234)
+[debug] 	at org.apache.ivy.Ivy.resolve(Ivy.java:517)
+[debug] 	at sbt.internal.librarymanagement.IvyActions$.resolveAndRetrieve(IvyActions.scala:322)
+[debug] 	at sbt.internal.librarymanagement.IvyActions$.$anonfun$updateEither$1(IvyActions.scala:208)
+[debug] 	at sbt.internal.librarymanagement.IvySbt$Module.$anonfun$withModule$1(Ivy.scala:243)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.$anonfun$withIvy$1(Ivy.scala:204)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.sbt$internal$librarymanagement$IvySbt$$action$1(Ivy.scala:70)
+[debug] 	at sbt.internal.librarymanagement.IvySbt$$anon$3.call(Ivy.scala:77)
+[debug] 	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:95)
+[debug] 	at xsbt.boot.Locks$GlobalLock.xsbt$boot$Locks$GlobalLock$$withChannelRetries$1(Locks.scala:80)
+[debug] 	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:99)
+[debug] 	at xsbt.boot.Using$.withResource(Using.scala:10)
+[debug] 	at xsbt.boot.Using$.apply(Using.scala:9)
+[debug] 	at xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:60)
+[debug] 	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:50)
+[debug] 	at xsbt.boot.Locks$.apply0(Locks.scala:31)
+[debug] 	at xsbt.boot.Locks$.apply(Locks.scala:28)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.withDefaultLogger(Ivy.scala:77)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.withIvy(Ivy.scala:199)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.withIvy(Ivy.scala:196)
+[debug] 	at sbt.internal.librarymanagement.IvySbt$Module.withModule(Ivy.scala:242)
+[debug] 	at sbt.internal.librarymanagement.IvyActions$.updateEither(IvyActions.scala:193)
+[debug] 	at sbt.librarymanagement.ivy.IvyDependencyResolution.update(IvyDependencyResolution.scala:20)
+[debug] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:56)
+[debug] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:46)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:99)
+[debug] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:68)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$19(LibraryManagement.scala:112)
+[debug] 	at scala.util.control.Exception$Catch.apply(Exception.scala:224)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:112)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:95)
+[debug] 	at sbt.util.Tracked$.$anonfun$inputChanged$1(Tracked.scala:149)
+[debug] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:126)
+[debug] 	at sbt.Classpaths$.$anonfun$updateTask$5(Defaults.scala:2386)
+[debug] 	at scala.Function1.$anonfun$compose$1(Function1.scala:44)
+[debug] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:39)
+[debug] 	at sbt.std.Transform$$anon$4.work(System.scala:66)
+[debug] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:262)
+[debug] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:16)
+[debug] 	at sbt.Execute.work(Execute.scala:271)
+[debug] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:262)
+[debug] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:174)
+[debug] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:36)
+[debug] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[debug] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[debug] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[debug] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[debug] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[debug] 	at java.lang.Thread.run(Thread.java:748)
+[debug] Caused by: java.net.SocketTimeoutException: connect timed out
+[debug] 	at java.net.PlainSocketImpl.socketConnect(Native Method)
+[debug] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+[debug] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+[debug] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+[debug] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+[debug] 	at java.net.Socket.connect(Socket.java:589)
+[debug] 	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
+[debug] 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:221)
+[debug] 	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:147)
+[debug] 	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:192)
+[debug] 	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
+[debug] 	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
+[debug] 	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+[debug] 	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+[debug] 	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+[debug] 	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
+[debug] 	at okhttp3.RealCall.execute(RealCall.java:69)
+[debug] 	at sbt.internal.librarymanagement.ivyint.GigahorseUrlHandler.getURLInfo(GigahorseUrlHandler.scala:48)
+[debug] 	at sbt.internal.librarymanagement.ivyint.GigahorseUrlHandler.getURLInfo(GigahorseUrlHandler.scala:29)
+[debug] 	at org.apache.ivy.util.url.URLHandlerDispatcher.getURLInfo(URLHandlerDispatcher.java:66)
+[debug] 	at org.apache.ivy.plugins.repository.url.URLResource.init(URLResource.java:65)
+[debug] 	at org.apache.ivy.plugins.repository.url.URLResource.exists(URLResource.java:81)
+[debug] 	at org.apache.ivy.plugins.resolver.RepositoryResolver.findResourceUsingPattern(RepositoryResolver.java:97)
+[debug] 	... 105 more
 [debug] 		tried /home/hadoop/.sbt/preloaded/org.apache.spark/spark-core_2.12/2.3.2/ivys/ivy.xml
 [debug] 	local-preloaded-ivy: no ivy file found for org.apache.spark#spark-core_2.12;2.3.2
 [debug] 		tried file:////home/hadoop/.sbt/preloaded/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom
 [debug] 	local-preloaded: no ivy file found for org.apache.spark#spark-core_2.12;2.3.2
-[warn] 	module not found: org.apache.spark#spark-core_2.12;2.3.2
-[warn] ==== local: tried
-[warn]   /home/hadoop/.ivy2/local/org.apache.spark/spark-core_2.12/2.3.2/ivys/ivy.xml
-[warn] ==== public: tried
-[warn]   https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom
-[warn] ==== local-preloaded-ivy: tried
-[warn]   /home/hadoop/.sbt/preloaded/org.apache.spark/spark-core_2.12/2.3.2/ivys/ivy.xml
-[warn] ==== local-preloaded: tried
-[warn]   file:////home/hadoop/.sbt/preloaded/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom
+[debug] problem occurred while resolving dependency: org.apache.spark#spark-core_2.12;2.3.2 {compile=[default(compile)]} with sbt-chain-delegate: java.lang.RuntimeException: public: unable to get resource for org/apache/spark#spark-core_2.12;2.3.2: res=https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom: java.net.SocketTimeoutException: connect timed out
+[debug] 	at org.apache.ivy.plugins.resolver.RepositoryResolver.findResourceUsingPattern(RepositoryResolver.java:135)
+[debug] 	at org.apache.ivy.plugins.resolver.AbstractPatternsBasedResolver.findResourceUsingPatterns(AbstractPatternsBasedResolver.java:96)
+[debug] 	at org.apache.ivy.plugins.resolver.IBiblioResolver.findIvyFileRef(IBiblioResolver.java:102)
+[debug] 	at org.apache.ivy.plugins.resolver.BasicResolver.getDependency(BasicResolver.java:228)
+[debug] 	at org.apache.ivy.plugins.resolver.IBiblioResolver.getDependency(IBiblioResolver.java:538)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$$anonfun$defaultConvert$lzycompute$1$PluginCapableResolver$1.sbt$internal$librarymanagement$ConvertResolver$DescriptorRequired$$super$getDependency(ConvertResolver.scala:164)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$DescriptorRequired.getDependency(ConvertResolver.scala:291)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$DescriptorRequired.getDependency$(ConvertResolver.scala:288)
+[debug] 	at sbt.internal.librarymanagement.ConvertResolver$$anonfun$defaultConvert$lzycompute$1$PluginCapableResolver$1.getDependency(ConvertResolver.scala:164)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.performResolution$1(SbtChainResolver.scala:152)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getResults$3(SbtChainResolver.scala:172)
+[debug] 	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:234)
+[debug] 	at scala.collection.Iterator.foreach(Iterator.scala:929)
+[debug] 	at scala.collection.Iterator.foreach$(Iterator.scala:929)
+[debug] 	at scala.collection.AbstractIterator.foreach(Iterator.scala:1417)
+[debug] 	at scala.collection.IterableLike.foreach(IterableLike.scala:71)
+[debug] 	at scala.collection.IterableLike.foreach$(IterableLike.scala:70)
+[debug] 	at scala.collection.AbstractIterable.foreach(Iterable.scala:54)
+[debug] 	at scala.collection.TraversableLike.map(TraversableLike.scala:234)
+[debug] 	at scala.collection.TraversableLike.map$(TraversableLike.scala:227)
+[debug] 	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getResults(SbtChainResolver.scala:165)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$lzycompute$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getDependency$1(SbtChainResolver.scala:323)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$resolveByAllMeans$2(SbtChainResolver.scala:249)
+[debug] 	at scala.Option.orElse(Option.scala:289)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.resolveByAllMeans(SbtChainResolver.scala:247)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getDependency(SbtChainResolver.scala:324)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver.getDependency(SbtChainResolver.scala:90)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.performResolution$1(SbtChainResolver.scala:152)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getResults$3(SbtChainResolver.scala:172)
+[debug] 	at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:234)
+[debug] 	at scala.collection.Iterator.foreach(Iterator.scala:929)
+[debug] 	at scala.collection.Iterator.foreach$(Iterator.scala:929)
+[debug] 	at scala.collection.AbstractIterator.foreach(Iterator.scala:1417)
+[debug] 	at scala.collection.IterableLike.foreach(IterableLike.scala:71)
+[debug] 	at scala.collection.IterableLike.foreach$(IterableLike.scala:70)
+[debug] 	at scala.collection.AbstractIterable.foreach(Iterable.scala:54)
+[debug] 	at scala.collection.TraversableLike.map(TraversableLike.scala:234)
+[debug] 	at scala.collection.TraversableLike.map$(TraversableLike.scala:227)
+[debug] 	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getResults(SbtChainResolver.scala:165)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$lzycompute$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.results$1(SbtChainResolver.scala:321)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$getDependency$1(SbtChainResolver.scala:323)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.$anonfun$resolveByAllMeans$2(SbtChainResolver.scala:249)
+[debug] 	at scala.Option.orElse(Option.scala:289)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.resolveByAllMeans(SbtChainResolver.scala:247)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver$CustomSbtResolution$.getDependency(SbtChainResolver.scala:324)
+[debug] 	at sbt.internal.librarymanagement.ivyint.SbtChainResolver.getDependency(SbtChainResolver.scala:90)
+[debug] 	at org.apache.ivy.core.resolve.IvyNode.loadData(IvyNode.java:169)
+[debug] 	at org.apache.ivy.core.resolve.VisitNode.loadData(VisitNode.java:292)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.fetchDependencies(ResolveEngine.java:714)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.doFetchDependencies(ResolveEngine.java:799)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.fetchDependencies(ResolveEngine.java:722)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.getDependencies(ResolveEngine.java:594)
+[debug] 	at org.apache.ivy.core.resolve.ResolveEngine.resolve(ResolveEngine.java:234)
+[debug] 	at org.apache.ivy.Ivy.resolve(Ivy.java:517)
+[debug] 	at sbt.internal.librarymanagement.IvyActions$.resolveAndRetrieve(IvyActions.scala:322)
+[debug] 	at sbt.internal.librarymanagement.IvyActions$.$anonfun$updateEither$1(IvyActions.scala:208)
+[debug] 	at sbt.internal.librarymanagement.IvySbt$Module.$anonfun$withModule$1(Ivy.scala:243)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.$anonfun$withIvy$1(Ivy.scala:204)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.sbt$internal$librarymanagement$IvySbt$$action$1(Ivy.scala:70)
+[debug] 	at sbt.internal.librarymanagement.IvySbt$$anon$3.call(Ivy.scala:77)
+[debug] 	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:95)
+[debug] 	at xsbt.boot.Locks$GlobalLock.xsbt$boot$Locks$GlobalLock$$withChannelRetries$1(Locks.scala:80)
+[debug] 	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:99)
+[debug] 	at xsbt.boot.Using$.withResource(Using.scala:10)
+[debug] 	at xsbt.boot.Using$.apply(Using.scala:9)
+[debug] 	at xsbt.boot.Locks$GlobalLock.ignoringDeadlockAvoided(Locks.scala:60)
+[debug] 	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:50)
+[debug] 	at xsbt.boot.Locks$.apply0(Locks.scala:31)
+[debug] 	at xsbt.boot.Locks$.apply(Locks.scala:28)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.withDefaultLogger(Ivy.scala:77)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.withIvy(Ivy.scala:199)
+[debug] 	at sbt.internal.librarymanagement.IvySbt.withIvy(Ivy.scala:196)
+[debug] 	at sbt.internal.librarymanagement.IvySbt$Module.withModule(Ivy.scala:242)
+[debug] 	at sbt.internal.librarymanagement.IvyActions$.updateEither(IvyActions.scala:193)
+[debug] 	at sbt.librarymanagement.ivy.IvyDependencyResolution.update(IvyDependencyResolution.scala:20)
+[debug] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:56)
+[debug] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:46)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:99)
+[debug] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:68)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$19(LibraryManagement.scala:112)
+[debug] 	at scala.util.control.Exception$Catch.apply(Exception.scala:224)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:112)
+[debug] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:95)
+[debug] 	at sbt.util.Tracked$.$anonfun$inputChanged$1(Tracked.scala:149)
+[debug] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:126)
+[debug] 	at sbt.Classpaths$.$anonfun$updateTask$5(Defaults.scala:2386)
+[debug] 	at scala.Function1.$anonfun$compose$1(Function1.scala:44)
+[debug] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:39)
+[debug] 	at sbt.std.Transform$$anon$4.work(System.scala:66)
+[debug] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:262)
+[debug] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:16)
+[debug] 	at sbt.Execute.work(Execute.scala:271)
+[debug] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:262)
+[debug] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:174)
+[debug] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:36)
+[debug] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[debug] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[debug] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[debug] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[debug] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[debug] 	at java.lang.Thread.run(Thread.java:748)
+[debug] Caused by: java.net.SocketTimeoutException: connect timed out
+[debug] 	at java.net.PlainSocketImpl.socketConnect(Native Method)
+[debug] 	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+[debug] 	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+[debug] 	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+[debug] 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+[debug] 	at java.net.Socket.connect(Socket.java:589)
+[debug] 	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
+[debug] 	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:221)
+[debug] 	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:147)
+[debug] 	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:192)
+[debug] 	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
+[debug] 	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
+[debug] 	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+[debug] 	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+[debug] 	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+[debug] 	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+[debug] 	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
+[debug] 	at okhttp3.RealCall.execute(RealCall.java:69)
+[debug] 	at sbt.internal.librarymanagement.ivyint.GigahorseUrlHandler.getURLInfo(GigahorseUrlHandler.scala:48)
+[debug] 	at sbt.internal.librarymanagement.ivyint.GigahorseUrlHandler.getURLInfo(GigahorseUrlHandler.scala:29)
+[debug] 	at org.apache.ivy.util.url.URLHandlerDispatcher.getURLInfo(URLHandlerDispatcher.java:66)
+[debug] 	at org.apache.ivy.plugins.repository.url.URLResource.init(URLResource.java:65)
+[debug] 	at org.apache.ivy.plugins.repository.url.URLResource.exists(URLResource.java:81)
+[debug] 	at org.apache.ivy.plugins.resolver.RepositoryResolver.findResourceUsingPattern(RepositoryResolver.java:97)
+[debug] 	... 105 more
 [debug] resolving dependencies for configuration 'runtime'
 [debug] == resolving dependencies for readhbase#readhbase_2.12;0.1 [runtime]
 [debug] == resolving dependencies for readhbase#readhbase_2.12;0.1 [compile]
@@ -318,64 +587,81 @@
 [debug] ignoring unhandled DependencyDescriptorMediator: class sbt.internal.librarymanagement.IvyScalaUtil$OverrideScalaMediator
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.4!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.4!scala-reflect.jar
 [debug] no default ivy user dir defined: set to /home/hadoop/.ivy2
 [debug] no default ivy user dir defined: set to /home/hadoop/.ivy2
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.4!scala-compiler.jar
 [debug] no default ivy user dir defined: set to /home/hadoop/.ivy2
-[debug] no default ivy user dir defined: set to /home/hadoop/.ivy2
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar
 [debug] no default ivy user dir defined: set to /home/hadoop/.ivy2
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default ivy user dir defined: set to /home/hadoop/.ivy2
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] no default cache defined: set to /home/hadoop/.ivy2/cache
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] no default cache defined: set to /home/hadoop/.ivy2/cache
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to /home/hadoop/.ivy2/cache
-[debug] no default cache defined: set to /home/hadoop/.ivy2/cache
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] no default cache defined: set to /home/hadoop/.ivy2/cache
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default cache defined: set to /home/hadoop/.ivy2/cache
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] no default cache defined: set to /home/hadoop/.ivy2/cache
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (51ms)
-[debug] 	default cache: /home/hadoop/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] settings loaded (33ms)
+[debug] 	default cache: /home/hadoop/.ivy2/cache
+[debug] 	default resolver: default
+[debug] settings loaded (42ms)
+[debug] 	default cache: /home/hadoop/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (39ms)
+[debug] 	default cache: /home/hadoop/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (78ms)
-[debug] 	default cache: /home/hadoop/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
 [debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (82ms)
+[debug] settings loaded (56ms)
+[debug] 	default cache: /home/hadoop/.ivy2/cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] settings loaded (56ms)
 [debug] 	default cache: /home/hadoop/.ivy2/cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -384,30 +670,13 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] including url: jar:file:/home/hadoop/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (84ms)
-[debug] 	default cache: /home/hadoop/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] settings loaded (92ms)
-[debug] 	default cache: /home/hadoop/.ivy2/cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] :: resolution report :: resolve 1727ms :: artifacts dl 161ms
+[debug] :: resolution report :: resolve 123144ms :: artifacts dl 86ms
 [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
 [warn] 	::          UNRESOLVED DEPENDENCIES         ::
 [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
-[warn] 	:: org.apache.spark#spark-core_2.12;2.3.2: not found
+[warn] 	:: org.apache.spark#spark-core_2.12;2.3.2: public: unable to get resource for org/apache/spark#spark-core_2.12;2.3.2: res=https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom: java.net.SocketTimeoutException: connect timed out
 [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
 [debug] 	report for readhbase#readhbase_2.12;0.1 compile produced in /home/hadoop/IdeaProjects/Spark-Hadoop/Spark-stu/spark_read_HBase/target/scala-2.12/resolution-cache/reports/readhbase-readhbase_2.12-compile.xml
 [debug] 	report for readhbase#readhbase_2.12;0.1 runtime produced in /home/hadoop/IdeaProjects/Spark-Hadoop/Spark-stu/spark_read_HBase/target/scala-2.12/resolution-cache/reports/readhbase-readhbase_2.12-runtime.xml
@@ -420,12 +689,12 @@
 [debug] 	report for readhbase#readhbase_2.12;0.1 plugin produced in /home/hadoop/IdeaProjects/Spark-Hadoop/Spark-stu/spark_read_HBase/target/scala-2.12/resolution-cache/reports/readhbase-readhbase_2.12-plugin.xml
 [debug] 	report for readhbase#readhbase_2.12;0.1 pom produced in /home/hadoop/IdeaProjects/Spark-Hadoop/Spark-stu/spark_read_HBase/target/scala-2.12/resolution-cache/reports/readhbase-readhbase_2.12-pom.xml
 [debug] 	report for readhbase#readhbase_2.12;0.1 scala-tool produced in /home/hadoop/IdeaProjects/Spark-Hadoop/Spark-stu/spark_read_HBase/target/scala-2.12/resolution-cache/reports/readhbase-readhbase_2.12-scala-tool.xml
-[debug] 	resolve done (1727ms resolve - 161ms download)
+[debug] 	resolve done (123144ms resolve - 86ms download)
 [warn] 
 [warn] 	Note: Unresolved dependencies path:
 [warn] 		org.apache.spark:spark-core_2.12:2.3.2 (/home/hadoop/IdeaProjects/Spark-Hadoop/Spark-stu/spark_read_HBase/build.sbt#L7-8)
 [warn] 		  +- readhbase:readhbase_2.12:0.1
-[error] sbt.librarymanagement.ResolveException: unresolved dependency: org.apache.spark#spark-core_2.12;2.3.2: not found
+[error] sbt.librarymanagement.ResolveException: unresolved dependency: org.apache.spark#spark-core_2.12;2.3.2: public: unable to get resource for org/apache/spark#spark-core_2.12;2.3.2: res=https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.12/2.3.2/spark-core_2.12-2.3.2.pom: java.net.SocketTimeoutException: connect timed out
 [error] 	at sbt.internal.librarymanagement.IvyActions$.resolveAndRetrieve(IvyActions.scala:334)
 [error] 	at sbt.internal.librarymanagement.IvyActions$.$anonfun$updateEither$1(IvyActions.scala:208)
 [error] 	at sbt.internal.librarymanagement.IvySbt$Module.$anonfun$withModule$1(Ivy.scala:243)
